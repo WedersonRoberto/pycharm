@@ -26,7 +26,7 @@ def temporizador_com_shutdown():
             # Bip nos 10 segundos finais
             bip = "\a" if 0 < segundos < 10 else ""
             print(f"\r Tempo restante :{timer}{bip} ", end="" , flush=True)
-            time.sleep(10)
+            time.sleep(1)
             segundos -= 1
             print("\n\nIniciando o desligamento... Tchau🙋‍♂️")
             shutdown()
