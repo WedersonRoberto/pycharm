@@ -1,9 +1,8 @@
 import time
-import sys
 import os
 import platform
 
-def shutdowmn():
+def shutdown():
     sistema = platform.system().lower()
     try:
         if "windows"in sistema :
@@ -27,12 +26,12 @@ def temporizador_com_shutdown():
             # Bip nos 10 segundos finais
             bip = "\a" if 0 < segundos < 10 else ""
             print(f"\r Tempo restante :{timer}{bip} ", end="" , flush=True)
-            time.sleep(1)
+            time.sleep(10)
             segundos -= 1
             print("\n\nIniciando o desligamento... Tchau🙋‍♂️")
-            shutdowmn()
+            shutdown()
     except ValueError :
-        print("\Erro : Por favor , digite apenas números inteiros")
+        print("\nErro : Por favor , digite apenas números inteiros")
     except KeyboardInterrupt :
         print("\n\nOperação cancelada pelo usuário")
 if __name__ == "__main__" :
